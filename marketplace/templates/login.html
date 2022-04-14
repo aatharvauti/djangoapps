@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace | Login</title>
+    
+    <style>
+        body {
+            background-color: rgb(226, 226, 226);
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        h1 {
+            font-size: 50px;
+            padding-top: 25px;
+            text-align: center;
+        }
+    
+        input {
+            font-family: 'Helvetica Neue', sans-serif;
+            display: block;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgb(199, 199, 199);
+            width: 100%;
+            border: 0;
+            padding: 10px 10px;
+            margin: 15px -10px;
+        }
+    
+        button {
+            font-family: 'Helvetica Neue', sans-serif;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 80px;
+            border: 0;
+            padding: 10px 0;
+            margin-top: 10px;
+            margin-left: -10px;
+            border-radius: 5px;
+            background-color: rgb(43, 127, 253);
+        }
+    
+        .employee-login-form {
+            overflow: hidden;
+            background-color: white;
+            padding: 40px 30px 30px 30px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            transform: translate(-50%, -50%);
+            box-shadow: 5px 10px 10px rgb(99, 99, 99);
+        }
+    
+        #employee-login-invalid {
+            color: red;
+        }
+    
+        </style>
+
+</head>
+<body>
+    
+    <h1>Employee Login</h1>
+
+    <form action="{% url 'customers_url' %}" method="post" class="employee-login-form">
+        {% csrf_token %}
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <button>Login</button>
+    </form>
+
+</body>
+</html>
