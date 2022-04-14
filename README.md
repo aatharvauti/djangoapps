@@ -6,7 +6,7 @@
 ### Python Packages
 
 ```
-pip install django python-dot-env mysql-connector-python
+pip install django python-dotenv mysql-connector-python
 ```
 
 ### Setup MySQL
