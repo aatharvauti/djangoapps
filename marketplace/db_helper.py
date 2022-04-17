@@ -15,6 +15,7 @@ uri = os.getenv('URI')
 # pip install mysql-connector-python
 import mysql.connector
 
+
 class DBHelper:
 
     def __init__(self):
@@ -31,12 +32,13 @@ class DBHelper:
         # Close Connection
         self.mydb.close()
 
-    def execute_select_query(self, query):
+    def execute_select_query(self, query, params):
+        
         # Create cursor 
         mycursor = self.mydb.cursor(dictionary=True)
 
         # Fire Query
-        mycursor.execute(query)
+        mycursor.execute(query, params)
 
         # Extract result
         myresult = mycursor.fetchall()

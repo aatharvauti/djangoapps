@@ -18,7 +18,7 @@ def customers_list(request):
     db_helper = DBHelper()
 
     # fetch employee details from the database using email
-    query_empdetails = "SELECT firstName, lastName, employeeNumber FROM employees WHERE email = '%s' AND password = '%s';"
+    query_empdetails = "SELECT firstName, lastName, employeeNumber FROM employees WHERE email = %s AND password = %s;"
     params = (employee_email, employee_password)
     employee_details = db_helper.execute_select_query(query_empdetails, params)
 
